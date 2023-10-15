@@ -5,20 +5,19 @@ const HeadComp = ({title}) => {
   return (
     <Head>
         <title>{title}</title>
-        {/* <meta name="description" content=" Decentralized Perpetual Protocol Built on Base" />
+        <meta name="description" content="This is just to assert that I'm up to the task" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="keywords" content="perpetual exchange, zeit, base, dapp, zeitprotocol, zeit protocol" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="zeitprotocol.xyz" />
-        <meta name="twitter:title" content="Zeit Protocol" />
-        <meta name="twitter:description" content="Decentralized Perpetual Protocol Built on Base" />
-        <meta name="twitter:image" content="https://zeitprotocol.xyz/images/open-graph-img.png" />
-        <meta property="og:title" content="Zeit Protocol" />
-        <meta property="og:url" content="https://zeitprotocol.xyz" />
-        <meta property="og:image" content="https://zeitprotocol.xyz/images/open-graph-img.png" />
+        <meta name="twitter:site" content="sigflow-johnex.vercel.app" />
+        <meta name="twitter:title" content="John's Submission . Sigflow" />
+        <meta name="twitter:description" content="This is just to assert that I'm up to the task" />
+        <meta name="twitter:image" content="https://sigflow-johnex.vercel.app/images/open-graph-img.jpeg" />
+        <meta property="og:title" content="John's Submission . Sigflow" />
+        <meta property="og:url" content="https://sigflow-johnex.vercel.app" />
+        <meta property="og:image" content="https://sigflow-johnex.vercel.app/images/open-graph-img.jpeg" />
         <meta property="og:type" content="website" />
-        <meta property="og:description" content="Decentralized Perpetual Protocol Built on Base" />
-        <meta property="og:site_name" content="Zeit Protocol" /> */}
+        <meta property="og:description" content="This is just to assert that I'm up to the task" />
+        <meta property="og:site_name" content="John's Submission . Sigflow" />
         <link rel="icon" href="/john.ico" />
     </Head>
   )
