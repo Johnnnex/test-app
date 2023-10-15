@@ -3,25 +3,46 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --brand-color: #32D583;
+  --gray-300: #D0D5DD;
+  --White: #fff;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.bg-signin {
+  background: url(/images/bg.png);
+  background-position: center;
+  background-size: cover;
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* basic stylea */
+.input-generic {
+  padding-block: 10px;
+  padding-inline: 14px;
+  border-radius: 8px;
+  border: 1px solid var(--gray-300);
+  background: var(--White);
+  outline: none;
+  width: 100%;
+}
+.button-generic {
+  padding-inline: 20px;
+  padding-block: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--brand-color);
+  background-color: var(--brand-color) !important;
+  width: 100%;
+}
+.button-small {
+  padding-block: 6px;
+  padding-inline: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--gray-300);
+  background: var(--White);
+}
+/* disabling default browser styles */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
 }
