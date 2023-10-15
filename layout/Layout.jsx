@@ -1,11 +1,14 @@
 import React from 'react'
 import Nav from './Nav'
 import Footer from './Footer'
+import { useData } from "@/context/DataContext";
+import DashboardNav from './DashboardNav';
 
 const Layout = ({children}) => {
+  const {mode} = useData()
   return (
     <>
-        <Nav />
+        {mode ? <DashboardNav /> : <Nav /> }
         {children}
         <Footer />
     </>

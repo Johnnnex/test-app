@@ -3,7 +3,7 @@ const DataContext=createContext({})
 const {Provider}= DataContext
 
 const DataGet=({children})=>{
-    const [mode, setMode] = useState(true)
+    const [mode, setMode] = useState(false)
     return (
         <Provider value={{setMode, mode}}>
             {children}
