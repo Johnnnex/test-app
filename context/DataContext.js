@@ -4,8 +4,9 @@ const {Provider}= DataContext
 
 const DataGet=({children})=>{
     const [mode, setMode] = useState(false)
+    const [uData, setUdata] = useState(null)
     return (
-        <Provider value={{setMode, mode}}>
+        <Provider value={{setMode, mode, uData, setUdata}}>
             {children}
         </Provider>
     )

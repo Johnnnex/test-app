@@ -19,7 +19,7 @@ const HeadComp = ({title}) => {
         <meta property="og:type" content="website" />
         <meta property="og:description" content="Decentralized Perpetual Protocol Built on Base" />
         <meta property="og:site_name" content="Zeit Protocol" /> */}
-        <link rel="icon" href="/logo.ico" />
+        <link rel="icon" href="/john.ico" />
     </Head>
   )
 }

@@ -6,11 +6,18 @@
   --brand-color: #32D583;
   --gray-300: #D0D5DD;
   --White: #fff;
+  --Success-50: #ECFDF3;
 }
 .bg-signin {
   background: url(/images/bg.png);
   background-position: center;
   background-size: cover;
+}
+.activeLink {
+  background-color: var(--Success-50);
+  color: var(--brand-color) !important;
+  font-weight: 600 !important;
+  font-family: "Manrope" !important;
 }
 /* basic stylea */
 .input-generic {
@@ -21,6 +28,14 @@
   background: var(--White);
   outline: none;
   width: 100%;
+  transition: .4s;
+}
+.input-generic:hover {
+  background: #00000010;
+}
+.input-generic:focus {
+  border: 1px solid var(--brand-color);
+  background: #00000010;
 }
 .button-generic {
   padding-inline: 20px;
@@ -29,6 +44,36 @@
   border: 1px solid var(--brand-color);
   background-color: var(--brand-color) !important;
   width: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: .4s;
+}
+.button-generic:focus {
+  background: #13814a !important;
+}
+.button-generic:before{
+  content: "";
+  left: 0;
+  top: 0;
+  position: absolute;
+  background-color: #00000045 !important;
+  width: 20%;
+  height: 100%;
+  transform: translateX(-6rem);
+  transition: .6s;
+}
+.button-generic:hover{
+  outline: 2px solid var(--brand-color);
+  outline-offset: 4px;
+  transition-delay: .2s;
+  transition-duration: .04s;
+}
+.button-generic:hover:before {
+  transform: translateX(33rem); 
+}
+.button-generic:disabled {
+  background-color: #32D58350;
+  cursor: not-allowed;
 }
 .button-small {
   padding-block: 6px;
@@ -36,6 +81,23 @@
   border-radius: 8px;
   border: 1px solid var(--gray-300);
   background: var(--White);
+  transition: .4s;
+}
+.button-small:hover {
+  background-color: #00000010;
+}
+.button-small-bl {
+  border-radius: 6px;
+  background: rgba(24, 24, 27, 0.05);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  transition: .4s;
+}
+.button-small-bl:hover {
+  background-color: rgba(24, 24, 27, 0.1);
 }
 /* disabling default browser styles */
 input[type="password"]::-ms-reveal,

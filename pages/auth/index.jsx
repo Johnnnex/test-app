@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import HeadComp from '@/layout/HeadComp'
 import Link from 'next/link'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import { Oval } from 'react-loader-spinner'
+import { useRouter } from 'next/router';
 import { useData } from "@/context/DataContext";
 
 const Index = () => {
@@ -11,8 +12,10 @@ const Index = () => {
   const [passVisibility, setPassVisibility] = useState(false)
   const [err, setErrStates] = useState({ email: false, password: false, neterr: false})
   const [formState, setFormState] = useState(null)
-  const {mode} = useData()
-
+  const {setMode, mode, uData, setUdata} = useData()
+  const {push} = useRouter()
+   
+  
   const changeInput = (e) => {
     const { target } = e
     setInputField({
@@ -20,7 +23,7 @@ const Index = () => {
       [target.name] : target.value
     })
   }
-  const submitData = (e) => {
+  const submitData = async(e) => {
     e.preventDefault()
     setFormState("loading")
     if (inputField.email == null || inputField.email == "") {
@@ -46,28 +49,11 @@ const Index = () => {
     body: JSON.stringify(inputField),
   }
 
-  
-  fetch(apiUrl, requestData)
-    .then(response => {
-      if (response.ok) {
-        return response.json()
-      } else {
-        toast.error('Invalid credentials!, please check your input and try again', {
-          position: "top-right",
-          autoClose: 1000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-          });
-        setFormState(null)
-        return
-      }
-    })
-    .then(data => {
-      console.log(data);
+  try {
+    const response = await fetch(apiUrl, requestData);
+
+    if (response.ok) {
+      const data = await response.json();
       toast.success('Login successful', {
         position: "top-right",
         autoClose: 1000,
@@ -77,17 +63,40 @@ const Index = () => {
         draggable: true,
         progress: undefined,
         theme: "light",
-        });
+      })
+      setUdata(data)
+      setMode(true)
       setFormState(null)
-    })
-    .catch(error => {
-      setErrStates({ neterr: true })
-      setTimeout(() => setErrStates({ neterr: false }), 5000)
+      setTimeout(() => push("/dashboard"), 1000)
+    } 
+    else {
+      const data = await response.json();
+      toast.error(data.message, {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       setFormState(null)
-    });
+      return
+    }
+  }
+  catch (error) {
+    setErrStates({ neterr: true })
+    setTimeout(() => setErrStates({ neterr: false }), 5000)
+    setFormState(null);
+  }
 
   }
-  
+  useEffect (() => {
+    if (mode) {
+      push("/dashboard")
+    }
+  }, [])
   return (
     <>
       <HeadComp title="Sigflow || Sign-In" />
@@ -117,9 +126,9 @@ const Index = () => {
             </div>
             {err.password && <p className="text-red-500 font-manrope text-[11px]">Please input something here!</p>}
           </section>
-          <a href="#" className="font-[500] text-[#32D583] text-[12px] font-manrope leading-[20px]">Forgot Password?</a>
+          <a href="#" className="font-[500] hover:underline text-[#32D583] text-[12px] font-manrope leading-[20px]">Forgot Password?</a>
           <div className="mt-[32px] mb-[20px]">
-            <button type='submit' className="font-manrope text-[14px] font-[600] text-white button-generic">
+            <button type='submit' disabled={formState == "loading" && "true"} className="font-manrope text-[14px] font-[600] text-white button-generic">
               {formState == "loading" ? 
                 <div className="mx-auto w-fit">
                   <Oval
@@ -165,7 +174,7 @@ const Index = () => {
         </form>
         <p className="font-manrope text-center text-[12px] text-[#101828] font-[400]">
           Don&apos;t have an account? &nbsp;
-          <a href="#" className="text-[#12B76A]">Sign Up</a>
+          <a href="#" className="text-[#12B76A] hover:underline">Sign Up</a>
         </p>
       </main>
       <ToastContainer />
