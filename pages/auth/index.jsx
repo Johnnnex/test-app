@@ -128,7 +128,7 @@ const Index = () => {
           </section>
           <a href="#" className="font-[500] hover:underline text-[#32D583] text-[12px] font-manrope leading-[20px]">Forgot Password?</a>
           <div className="mt-[32px] mb-[20px]">
-            <button type='submit' disabled={formState == "loading" && "true"} className="font-manrope text-[14px] font-[600] text-white button-generic">
+            <button type='submit' disabled={formState == "loading" && true} className="font-manrope text-[14px] font-[600] text-white button-generic">
               {formState == "loading" ? 
                 <div className="mx-auto w-fit">
                   <Oval
