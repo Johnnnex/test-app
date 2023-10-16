@@ -34,7 +34,7 @@ const Transformation = () => {
   return (
     <>
         <HeadComp title="Sigflow || Transformations" />
-        <main className="ml-[20%] pt-[73px] pr-[40px]">
+        <main className="md:ml-[20%] w-[90%] md:w-full mx-auto pt-[73px] pr-[40px]">
             <section className="my-[30px] justify-between items-center flex">
                 <h1 className=" font-manrope text-[20px] font-[600] text-[#101828]">Transformation</h1>
                 <div className="flex gap-[12px] items-center">
