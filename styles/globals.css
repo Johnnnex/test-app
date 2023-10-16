@@ -19,6 +19,9 @@
   font-weight: 600 !important;
   font-family: "Manrope" !important;
 }
+.bx-shadw {
+  box-shadow: 1px 4px 12px 0px rgba(0, 0, 0, 0.19);
+}
 /* basic stylea */
 .input-generic {
   padding-block: 10px;
