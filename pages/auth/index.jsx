@@ -100,8 +100,8 @@ const Index = () => {
   return (
     <>
       <HeadComp title="Sigflow || Sign-In" />
-      <main className="bg-signin pt-[110px]">
-        <form onSubmit={submitData} className="mb-[10px] max-w-[420px] w-[50%] mx-auto border border-[#E6E7EC] p-[30px] rounded-[8px] bg-white">
+      <main className="bg-signin pt-[90px]">
+        <form onSubmit={submitData} className="mb-[10px] md:max-w-[420px] w-[94%] md:w-[50%] mx-auto border border-[#E6E7EC] p-[30px] rounded-[8px] bg-white">
           <h1 className="font-manrope mb-[8px] text-[#101828] text-[24px] font-[500] text-center">Welcome back!</h1>
           <p className="font-manrope text-[#828282] text-center mb-[20px] font-[400] text-[14px]">Sign in to access your account</p>
           <section className="mb-[12px]">
