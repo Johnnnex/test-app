@@ -34,8 +34,8 @@ const Transformation = () => {
   return (
     <>
         <HeadComp title="Sigflow || Transformations" />
-        <main className="md:ml-[20%] w-[90%] md:w-[80%] mx-auto pt-[73px] pr-[40px]">
-            <section className="my-[30px] justify-between items-center flex">
+        <main className="md:ml-[20%] w-[90%] md:w-[80%] mx-auto pt-[73px] md:pr-[40px]">
+            <section className="my-[30px] justify-between items-center flex flex-col md:flex-row gap-[12px] md:gap-0">
                 <h1 className=" font-manrope text-[20px] font-[600] text-[#101828]">Transformation</h1>
                 <div className="flex gap-[12px] items-center">
                     <button className="px-[14px] py-[8px] bg-[#32D583] transition-[.4s] rounded-[8px] font-manrope text-[14px] font-[700] text-white hover:bg-[#2e7b54]">Create a new Transformation</button>
@@ -50,7 +50,7 @@ const Transformation = () => {
                     </svg>
                 </button>
             </div>
-            <section className="mt-[24px] overflow-auto max-h-[55vh] border p-[20px] border-[#E6E7EC] rounded-[8px]">
+            <section className="mt-[24px] overflow-auto max-h-[70vh] md:max-h-[55vh] border p-[20px] border-[#E6E7EC] rounded-[8px]">
                 <table className=''>
                     <thead className="">
                     <tr>
