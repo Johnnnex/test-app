@@ -10,12 +10,7 @@ const Transformation = () => {
     const itemsPerPage= 9
     const [items,setItems]= useState([])
     const [modal, setModal] = useState({one:false, two:false, three:false, four: false})
-    useEffect(()=> {
-        if(!mode) {
-            push("/")
-        }
-    }, [mode])
-
+    
     const heading=[
         "Name",
         "Creation Date",
