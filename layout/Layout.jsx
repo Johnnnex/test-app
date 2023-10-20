@@ -8,7 +8,7 @@ const Layout = ({children}) => {
   const {mode} = useData()
   return (
     <>
-        {mode ? <DashboardNav /> : <Nav /> }
+        <DashboardNav /> 
         {children}
         <Footer />
     </>
